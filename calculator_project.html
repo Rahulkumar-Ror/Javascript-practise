@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+    <style>
+        #container{
+            height: 400px;
+            width: 400px;
+            border: 3px solid rgb(51, 4, 4);
+        }
+        h1{
+            text-align: center;
+        }
+        input{
+            background-color: blue;
+            color: white;
+            width: 90px;
+            height: 50px;
+            font-size: x-large;
+        }
+        button{
+            height: 40px;
+            width: 100px;
+            margin-top: 10px;
+            margin-left: 100px;
+            background-color: rgb(56, 6, 6);
+            color: white;
+            font-size: large;
+        }
+  #error{
+      color: red;
+  }
+
+    </style>
+</head>
+<body>
+    <div id ="container">
+        <h1>Mile to KM</h1>
+       <h4><span id= "error"></span></h4>
+        Mile<input id="mile" type ="text">
+        KM:<input id= "km" type ="text"><br>
+        <button id ="submit" > Submit</button>
+    </div>
+    
+
+ <script>
+newmile= document.getElementById("mile")
+newkm= document.getElementById("km")
+newerror= document.getElementById("error")
+newsub= document.getElementById("submit")
+newsub.addEventListener("click",function(){
+    if(newmile.value===""){
+        newerror.innerText="Please enter value"
+    }
+    else{
+        newerror.innerText=""
+        newkm.value=newmile.value*1.609344
+    }
+ 
+})
+ </script>
+
+    
+</body>
+</html>
